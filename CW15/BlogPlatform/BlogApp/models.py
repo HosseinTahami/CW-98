@@ -8,20 +8,11 @@ class Author(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
-    author = models.ForeignKey(
-    Author,
-    on_delete=models.CASCADE
-    )
+    author = models.CharField(max_length=200)
     date = models.DateField(auto_now_add=True)
 class Comment(models.Model):
-    post = models.ForeignKey(
-        Post,
-        on_delete=models.CASCADE
-    )
-    author = models.ForeignKey(
-        Author,
-        on_delete=models.CASCADE
-    )
+    post = models.TextField()
+    author = models.CharField(max_length=200)
     date = models.DateTimeField(auto_now_add=True)
 
 class Category(models.Model):
