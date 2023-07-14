@@ -17,4 +17,6 @@ def author_details(request, author_id):
     detail = Author.objects.get(id = author_id)
     return render(request, 'author_details.html', {'detail': detail})
 
-    
+def post_details(request, post_id):
+    detail = Post.objects.get(id = post_id)
+    return render(request, 'post_details.html', {'detail': detail})
