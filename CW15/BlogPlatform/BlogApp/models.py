@@ -13,16 +13,6 @@ class Category(models.Model):
     def __str__(self) -> str:
         return f"{self.name} : {self.description}"
 
-class Comment(models.Model):
-    post = models.TextField()
-    author = models.ForeignKey(
-        Author,
-        on_delete=models.CASCADE
-    )
-    date = models.DateTimeField(auto_now_add=True)
-    def __str__(self) -> str:
-        return f"{self.post} : {self.author} : {self.date}"
-    
 class Post(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
@@ -34,14 +24,24 @@ class Post(models.Model):
         Category,
         on_delete=models.CASCADE
     )
-    
-    comment = models.ForeignKey(
-        Comment,
-        on_delete = models.CASCADE
-    )
     date = models.DateField(auto_now_add=True)
     def __str__(self) -> str:
         return f"{self.title} : {self.content} : {self.author} : {self.date}"
+class Comment(models.Model):
+    content = models.TextField()
+    author = models.ForeignKey(
+        Author,
+        on_delete=models.CASCADE
+    )
+    post = models.ForeignKey(
+        Post,
+        on_delete = models.CASCADE
+    )
+    date = models.DateTimeField(auto_now_add=True)
+    def __str__(self) -> str:
+        return f"{self.post} : {self.author} : {self.date}"
+    
+
 
 
 
