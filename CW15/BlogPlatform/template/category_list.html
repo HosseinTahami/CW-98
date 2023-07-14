@@ -1,9 +1,9 @@
 {% extends 'base.html'%}
 
-{%block title%} Category List {% endblock}
+{%block title%} Category List {% endblock%}
 
 {% block content %}
 {% for category in all %}
-<h2>{{ category.name }}</h2>
+<a href="categories/{{ category.id }}">{{ category.name }}</a>
 {% endfor %}
 {% endblock %}

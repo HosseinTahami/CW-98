@@ -1,9 +1,10 @@
 {% extends 'base.html'%}
 
-{%block title%} Post List {% endblock}
+{%block title%} Post List {% endblock%}
 
 {% block content %}
 {% for post in all %}
-<h2>{{ post.title }}</h2>
+<a href='posts/{{ post.id }}'>{{ post.title }}</a>
+<br>
 {% endfor %}
 {% endblock %}
