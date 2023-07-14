@@ -20,3 +20,7 @@ def author_details(request, author_id):
 def post_details(request, post_id):
     detail = Post.objects.get(id = post_id)
     return render(request, 'post_details.html', {'detail': detail})
+
+def category_details(request, category_id):
+    detail = Category.objects.get(id = category_id)
+    return render(request, 'category_details.html', {'detail': detail})
