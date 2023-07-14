@@ -1,8 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>{{ detail.title }}</h2>
-<h6>{{ detail.author }}</h6>
-<p>{{ detail.content }}</p>
-<small>{{ detail.date }}</small>
+<div class="text-center">
+    <h2>{{ detail.title }}</h2>
+    <br>
+    <h6>Category: {{ detail.Category.name }}</h6>
+    <br>
+    <a href="{% url 'authors_detail' detail.author.id %}">
+        <h6>Author: {{ detail.author.name }}</h6>
+    </a>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <p></p>
+            </div>
+            <div class="col-6">
+                <p>{{ detail.content }}</p>
+            </div>
+            <div class="col-3">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <small>Date: {{ detail.date }}</small>
+</div>
 {%endblock%}

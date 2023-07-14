@@ -7,5 +7,5 @@ urlpatterns = [
     path('authors/', views.author_list, name = 'authors'),
     path('posts/<int:post_id>/', views.post_details),
     path('categories/<int:category_id>/', views.category_details),
-    path('authors/<int:author_id>/', views.author_details)
+    path('authors/<int:author_id>/', views.author_details, name='authors_detail')
 ]
