@@ -12,4 +12,9 @@ def category_list(request):
 def author_list(request):
     authors = Author.objects.all()
     return render(request, 'author_list.html', {'all': authors })
+
+def author_details(request, author_id):
+    detail = Author.objects.get(id = author_id)
+    return render(request, 'author_details.html', {'detail': detail})
+
     
