@@ -4,6 +4,7 @@ from django.db import models
 class Author(models.Model):
     name = models.CharField(max_length=200)
     bio = models.TextField()
+    pic = models.ImageField(upload_to = 'images/', default='default_pic.jpg')
     def __str__(self) -> str:
         return f"{self.name} : {self.bio}"
 
