@@ -24,5 +24,19 @@
         </div>
     </div>
     <small>Date: {{ detail.date }}</small>
+    <br>
+    <br>
+    <div>
+        <h4>Comments:</h4>
+        <br>
+        {%for com in comment%}
+        <p>Content: {{com.content}} </p>
+        <small>Date & Time: {{com.date}}</small>
+        <br>
+        <small>author: {{com.author.name}}</small>
+        <br>
+        <br>
+        {%endfor%}
+    </div>
 </div>
 {%endblock%}
