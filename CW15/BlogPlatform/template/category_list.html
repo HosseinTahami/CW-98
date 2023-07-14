@@ -4,6 +4,6 @@
 
 {% block content %}
 {% for category in all %}
-<a href="{{ category.id }}">{{ category.name }}</a>
+<a href="{{ category.id }}" style="text-decoration:none">{{ category.name }}</a>
 {% endfor %}
 {% endblock %}

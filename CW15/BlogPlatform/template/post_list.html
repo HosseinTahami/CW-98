@@ -4,7 +4,7 @@
 
 {% block content %}
 {% for post in all %}
-<a href='{{ post.id }}'>{{ post.title }}</a>
+<a href='{{ post.id }}' style="text-decoration:none">{{ post.title }}</a>
 <br>
 {% endfor %}
 {% endblock %}

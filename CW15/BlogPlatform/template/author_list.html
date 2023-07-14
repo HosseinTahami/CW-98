@@ -4,7 +4,7 @@
 
 {% block content %}
 {% for author in all %}
-<a href="{{ author.id }}">{{ author.name }}</a>
+<a href="{{ author.id }}" style="text-decoration:none">{{ author.name }}</a>
 <br>
 {% endfor %}
 {% endblock %}
