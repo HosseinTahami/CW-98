@@ -5,3 +5,4 @@ env_cw/
 migrations
 migrations/
 __pycache__
+db.sqlite3
