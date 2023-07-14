@@ -5,7 +5,7 @@ urlpatterns = [
     path('posts/', views.post_list),
     path('categories/', views.category_list),
     path('authors/', views.author_list),
-    path('<int:post_id>/', views.post_details),
-    path('<int:category_id/', views.category_details),
-    path('<int:author_id>/', views.author_details)
+    path('posts/<int:post_id>/', views.post_details),
+    path('categories/<int:category_id/', views.category_details),
+    path('authors/<int:author_id>/', views.author_details)
 ]
