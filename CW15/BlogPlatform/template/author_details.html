@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<img class="mb-3 img-thumbnail border-black" src="{{ detail.pic.url}}" alt="" style="border-radius:50%; width: 200px;">
-<h3>{{ detail.name }}</h3>
-<p>{{ detail.bio }}</p>
+<div class="text-center mt-3 p-3">
+    <img class="mb-3 img-thumbnail border-black" src="{{ detail.pic.url}}" alt=""
+        style="border-radius:50%; width: 200px;">
+    <p><strong>Name:</strong> {{ detail.name }}</p>
+    <p><strong>Bio:</strong> {{ detail.bio }}</p>
+</div>
 {%endblock%}
