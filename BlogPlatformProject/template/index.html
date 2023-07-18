@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{% block title%}
+<title>Maktab Blog </title>
+{%endblock title%}
+{% block content%}
+{% if searched %}
+<div class="container mt-3">
+        <div class="row">
+                {% for result in results %}
+                <div class="col-4 text-center ">
+                        <div class="card border-primary mt-3" style="max-width: 18rem;">
+                                <h2 class="card-header">{{result.title}}</h2>
+                        </div>
+                </div>
+                {% endfor %}
+        </div>
+</div>
+{% endif %}
+{% endblock content%}
