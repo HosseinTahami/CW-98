@@ -31,9 +31,18 @@ def post_details(request, pk):
     if request.method == 'GET':
         post = Post.objects.get(id=pk)
         comments = Comment.objects.filter(Q(post__id=pk))
+        author_comment = request.GET.get('author')
+        content_comment = request.GET.get('content')
+        author_obj = Author.objects.get(name=author_comment)
+        Comment.objects.create(
+            author=author_obj,
+            content=content_comment,
+            post_id=pk)
+        print(author_comment)
         context = {"post": post,
                    "comments":comments
                    }
+        
     return render(request, "Blog/post.html", context)
 
 
