@@ -18,7 +18,7 @@ def home(request):
         return render(request, 'index.html', context)
         
     else:
-        context = {'results':result}
+        #context = {'results':result}
         return render(request, 'index.html')
     
 def post_list(request):
@@ -30,7 +30,10 @@ def post_details(request, pk):
     context = {}
     if request.method == 'GET':
         post = Post.objects.get(id=pk)
-        context = {"post": post}
+        comments = Comment.objects.filter(Q(post__id=pk))
+        context = {"post": post,
+                   "comments":comments
+                   }
     return render(request, "Blog/post.html", context)
 
 
