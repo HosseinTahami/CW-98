@@ -48,6 +48,14 @@ def post_details(request, pk):
 
 
 def category_list(request):
+    if request.GET.get('sub'):
+        name = request.GET.get('name')
+        description = request.GET.get('description')
+        Category.objects.create(
+            name=name,
+            description=description
+        )
+        print(name)
     all_category = Category.objects.all()
     return render(request, "Blog/category_list.html", {"all_category": all_category})
 
