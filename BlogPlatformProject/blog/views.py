@@ -12,11 +12,15 @@ def home(request):
     if request.method == "POST" :
         searched = request.POST['searched']
         result = Post.objects.filter(Q(title__icontains=searched) | Q(content__icontains=searched)).distinct()
-        context = {'results':result}
+        context = {'results':result,
+                   'searched': searched
+                   }
         return render(request, 'index.html', context)
+        
     else:
-        return render(request, 'base.html')
-
+        context = {'results':result}
+        return render(request, 'index.html')
+    
 def post_list(request):
     all_posts = Post.objects.all()
     return render(request, "Blog/post_list.html", {"all_posts": all_posts})

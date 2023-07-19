@@ -43,7 +43,7 @@
 
                 </ul>
                 <!-- Search bar -->
-                <form method=POST action="">
+                <form method=POST action="{% url 'home' %}">
                     {% csrf_token %}
                     <div class="input-group">
                         <input type="search" class="form-control" placeholder="Search Title & Content"
