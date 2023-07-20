@@ -43,12 +43,12 @@
 
                 </ul>
                 <!-- Search bar -->
-                <form method=POST action="{% url 'home' %}">
+                <form method=GET action="{% url 'home' %}">
                     {% csrf_token %}
                     <div class="input-group">
                         <input type="search" class="form-control" placeholder="Search Title & Content"
                             arial-label="Search" name="searched">
-                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                        <input class="btn btn-outline-primary" type="submit" name="sub" placeholder="search">
                     </div>
                 </form>
             </div>
@@ -69,6 +69,7 @@
             </div>
         </div>
     </header>
+    {{context.welcoming}}
     {% block content %}
 
     {% endblock content%}

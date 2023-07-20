@@ -9,17 +9,23 @@ from django.http import HttpResponse
 
 
 def home(request):
-    if request.method == "POST" :
-        searched = request.POST['searched']
-        result = Post.objects.filter(Q(title__icontains=searched) | Q(content__icontains=searched)).distinct()
-        context = {'results':result,
-                   'searched': searched
-                   }
-        return render(request, 'index.html', context)
-        
-    else:
-        #context = {'results':result}
-        return render(request, 'index.html')
+    # visited = request.COOKIES.get('visited')
+    # if visited:
+    #     context={'welcoming' : 'Welcome back !'}
+    # else:
+    #     context={'welcoming' : 'Welcome to my Website !'}
+    #     response.set_cookie('visited', True)
+    context = {}
+    if request.method == "GET" :
+        if request.GET.get('sub') :
+            searched = request.GET.get('searched')
+            result = Post.objects.filter(Q(title__icontains=searched) | Q(content__icontains=searched)).distinct()
+            context['results'] = result
+            context['searched'] =  searched
+        else:
+            return render(request, 'base.html',context)
+            
+    return render(request, 'index.html', context)
     
 def post_list(request):
     all_posts = Post.objects.all()
