@@ -7,7 +7,7 @@ class Todo(models.Model):
         User,
         on_delete=models.CASCADE,
         )
-    title = models.CharField()
+    title = models.CharField(max_length=120)
     description = models.TextField(null=True, blank=True)
     is_completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
