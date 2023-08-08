@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
-{% block title %}{% endblock %}
+{% block title %}Todo list{% endblock %}
 
 {% block content %}
-    <div class="card">
-        {{ todos }}
-    </div>
+{% for todo in todos %}
+<div class="card">
+    <h2>{{ todo }}</h2>
+    <br>
+    <h6>description:</h6>
+    {{ todo.description}}
+</div>
+<br>
+<br>
+{% endfor %}
 {% endblock %}
