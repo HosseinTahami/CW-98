@@ -16,6 +16,7 @@ class TodoListView(View):
 
 
 class TodoDetailView(TodoMixin, View):
-    template_name = 'todo_detail.html'
+    template_name = 'Home/todo_detail.html'
+    
 
 
