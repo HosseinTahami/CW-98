@@ -2,7 +2,10 @@
 {% block title %}{% endblock %}
 
 {% block content %}
-    <div class="card">
-        {{ todo }}
-    </div>
+<div class="card">
+    <h2>{{ todo.title }}</h2>
+    <br>
+    <h6>description:</h6>
+    {{ todo.description }}
+</div>
 {% endblock %}
