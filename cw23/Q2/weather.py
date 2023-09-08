@@ -27,8 +27,8 @@ class Station(ABC):
 
 class WeatherStation(Station):
     def __init__(self):
-        self.temperature = 0
-        self.humidity = 0
+        self.temperature = None
+        self.humidity = None
         self.observers = []
 
     def add_observer(self, observer):
