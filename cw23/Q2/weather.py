@@ -24,10 +24,6 @@ class Station(ABC):
     def notify_observer(self, observer):
         pass
 
-    @abstractmethod
-    def set_measurements(self, temperature, humidity):
-        pass
-
 
 class WeatherStation(Station):
     def __init__(self):
